@@ -16,3 +16,4 @@ document.querySelectorAll('.mobilenav .navlink').forEach(link => {
     mobilemenu.classList.remove('visible');
   });
 });
+

@@ -12,21 +12,21 @@ body {
 }
 
 .nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  z-index: 10;
-  background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    z-index: 10;
+    background: transparent;
 }
 
 .navlink {
     text-decoration: none;
-    color: rgb(241, 241, 241);
+    color: rgb(34, 33, 33);
     padding: 5px;
     font-size: 18px;
     font-weight: 500;
@@ -45,16 +45,16 @@ body {
 }
 
 .hero {
-  position: relative;
-  height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  overflow: hidden;
-  padding: 100px 20px 0;
+    position: relative;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    padding: 100px 20px 0;
 }
 
 
@@ -74,10 +74,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0;
-    transform: scale(1.1);
-    transition: transform 10s ease;
 
+    transition: transform 10s ease;
 }
 
 .hero:hover .heroimg {
@@ -124,6 +122,153 @@ body {
     color: #000;
     transform: scale(1.05);
 }
+
+
+.tittle {
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+.newarrivalcards {
+  display: grid;
+  gap: 18px;
+  grid-auto-flow: column;
+  grid-auto-columns: 18%;
+  background: #f3f3f3;
+  padding: 25px 40px 40px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 40px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.newarrivalcards::-webkit-scrollbar {
+  height: 6px;
+}
+.newarrivalcards::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 10px;
+}
+.newarrivalcards::-webkit-scrollbar-track {
+  background: #e9e9e9;
+}
+
+/* 🧩 Card container */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* make elements stretch evenly */
+  height: 100%; /* ensure equal card heights */
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+/* 🖼️ Image */
+.cardimg {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #fff;
+  padding: 10px;
+}
+
+.cardinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* space out product info & button */
+  flex-grow: 1; /* ensures it takes all available space */
+  padding: 12px 14px 16px;
+}
+
+.productname {
+  font-size: 15px;
+  color: #111;
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.rating {
+  font-size: 13px;
+  color: #f7a400;
+  margin-bottom: 6px;
+}
+.rating span {
+  color: #555;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+/* 🛒 Add to Cart */
+
+.cartbtn {
+  margin-top: auto; /* push to bottom */
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 8px;
+  color: #111;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cartbtn:hover {
+  background: #f7ca00;
+}
+
+/* 📱 Responsive tweaks */
+@media (max-width: 1024px) {
+  .newarrivalcards {
+    grid-auto-columns: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .newarrivalcards {
+    grid-auto-columns: 40%;
+    padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .newarrivalcards {
+    grid-auto-columns: 70%;
+  }
+  .cardimg {
+    height: 180px;
+  }
+}
+
+.others {
+  padding: 40px 20px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+
+
 
 
 @keyframes fadeInDown {
@@ -219,10 +364,11 @@ body {
     .nav .icons {
         display: none;
     }
+
     .hero {
-    padding-top: 120px;
-     height: 50vh;
-  }
+        padding-top: 120px;
+        height: 50vh;
+    }
 
 
 
@@ -243,5 +389,13 @@ body {
         gap: 15px;
         margin-top: 20px;
     }
+
+    .others {
+  padding: 40px 20px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr); /* two equal-width columns */
+}
+
 
 }
