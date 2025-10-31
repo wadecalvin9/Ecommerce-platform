@@ -31,7 +31,14 @@
         </div>
 
         <div class="icons">
-            <a href="/profile" class="navlink"><i class="fa-solid fa-user"></i></a>
+            @auth
+                <a href="/profile" class="navlink"><i class="fa-solid fa-user"></i></a>
+
+            @endauth
+            @guest
+                <a href="/register" class="navlink"><i class="fa-solid fa-user"></i></a>
+
+            @endguest
             <a href="/wishlist" class="navlink"><i class="fa-solid fa-heart"></i></a>
             <a href="/cart" class="navlink"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
@@ -58,7 +65,13 @@
         </div>
 
         <div class="icons">
-            <a href="/profile" class="navlink"><i class="fa-solid fa-user"></i></a>
+            @auth
+                <a href="/profile" class="navlink"><i class="fa-solid fa-user"></i></a>
+            @endauth
+            @guest
+                <a href="/register" class="navlink"><i class="fa-solid fa-user"></i></a>
+
+            @endguest
             <a href="/wishlist" class="navlink"><i class="fa-solid fa-heart"></i></a>
             <a href="/cart" class="navlink"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
@@ -264,7 +277,8 @@
             <img class="cardimg" src="https://m.media-amazon.com/images/I/71gsuO6W6RL._AC_UL640_QL65_.jpg"
                 alt="">
             <div class="cardinfo">
-                <div class="productname">Old School Authentic Japanese kanagawa the great wave Tattoo Pullover Hoodie</div>
+                <div class="productname">Old School Authentic Japanese kanagawa the great wave Tattoo Pullover Hoodie
+                </div>
                 <div class="rating">
                     ★★★★☆ <span>(154)</span>
                 </div>
@@ -276,7 +290,8 @@
             <img class="cardimg" src="https://m.media-amazon.com/images/I/81zwPHMuEfL._AC_UL640_QL65_.jpg"
                 alt="">
             <div class="cardinfo">
-                <div class="productname">PRODESIGN Mens Houndstooth Kimono Robe - Long Satin Sleepwear Silky Nightgown Bathrobe Dressing Gown Cardigan </div>
+                <div class="productname">PRODESIGN Mens Houndstooth Kimono Robe - Long Satin Sleepwear Silky Nightgown
+                    Bathrobe Dressing Gown Cardigan </div>
                 <div class="rating">
                     ★★★★☆ <span>(154)</span>
                 </div>
@@ -288,7 +303,8 @@
             <img class="cardimg" src="https://m.media-amazon.com/images/I/61t0HHP8ZcL._AC_UL640_QL65_.jpg"
                 alt="">
             <div class="cardinfo">
-                <div class="productname">ZAFUL Men's Side Star Casual Pants Y2K Lightweight Sweatpants Drawstring Dance Pants Baggy Fashion Straight Leg Pants</div>
+                <div class="productname">ZAFUL Men's Side Star Casual Pants Y2K Lightweight Sweatpants Drawstring Dance
+                    Pants Baggy Fashion Straight Leg Pants</div>
                 <div class="rating">
                     ★★★★☆ <span>(154)</span>
                 </div>
@@ -312,7 +328,8 @@
             <img class="cardimg" src="https://m.media-amazon.com/images/I/61DPmk4v+jL._AC_UL640_QL65_.jpg"
                 alt="">
             <div class="cardinfo">
-                <div class="productname">ellazhu Women's Oversized Irregular Drop Crotch Wide Leg Hakama Drawstring Harem Pants GZ163</div>
+                <div class="productname">ellazhu Women's Oversized Irregular Drop Crotch Wide Leg Hakama Drawstring
+                    Harem Pants GZ163</div>
                 <div class="rating">
                     ★★★★☆ <span>(154)</span>
                 </div>
@@ -324,7 +341,8 @@
             <img class="cardimg" src="https://m.media-amazon.com/images/I/61iqz8oNuhL._AC_UL640_QL65_.jpg"
                 alt="">
             <div class="cardinfo">
-                <div class="productname">Trendy Queen Womens Oversized Summer T Shirts Plus Size Batwing Cute Casual Tops Short Sleeves Fashion Workout Clothes</div>
+                <div class="productname">Trendy Queen Womens Oversized Summer T Shirts Plus Size Batwing Cute Casual
+                    Tops Short Sleeves Fashion Workout Clothes</div>
                 <div class="rating">
                     ★★★★☆ <span>(154)</span>
                 </div>

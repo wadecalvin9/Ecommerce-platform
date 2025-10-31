@@ -26,7 +26,7 @@ body {
 
 .navlink {
     text-decoration: none;
-    color: rgb(34, 33, 33);
+    color: rgb(211, 211, 211);
     padding: 5px;
     font-size: 18px;
     font-weight: 500;
@@ -34,7 +34,7 @@ body {
 }
 
 .navlink:hover {
-    color: blue;
+    color: white;
 }
 
 .logo {
