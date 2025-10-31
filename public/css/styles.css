@@ -23,19 +23,44 @@ body {
     z-index: 10;
     background: transparent;
 }
-
 .navlink {
     text-decoration: none;
     color: rgb(211, 211, 211);
-    padding: 5px;
+    padding: 5px 10px;
     font-size: 18px;
     font-weight: 500;
-    transition: color 0.3s ease;
+    border-radius: 1rem;
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
 }
 
+
 .navlink:hover {
-    color: white;
+    color: #0f0f0f;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px) saturate(180%) brightness(130%) contrast(95%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%) brightness(130%) contrast(95%);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.25), 0 4px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
 }
+
+
+.navlink::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.35), rgba(255,255,255,0.05));
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    border-radius: inherit;
+}
+
+.navlink:hover::before {
+    opacity: 1;
+}
+
 
 .logo {
 
@@ -118,9 +143,10 @@ body {
 }
 
 .hero a:hover {
-    background: #fff;
+    background: #ffffff40;
     color: #000;
     transform: scale(1.05);
+    backdrop-filter: blur(5px) contrast(80%) brightness(120%);
 }
 
 
@@ -131,140 +157,152 @@ body {
 
 
 .newarrivalcards {
-  display: grid;
-  gap: 18px;
-  grid-auto-flow: column;
-  grid-auto-columns: 18%;
-  background: #f3f3f3;
-  padding: 25px 40px 40px;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 40px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+    display: grid;
+    gap: 18px;
+    grid-auto-flow: column;
+    grid-auto-columns: 18%;
+    background: #f3f3f3;
+
+    padding: 25px 40px 40px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 40px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .newarrivalcards::-webkit-scrollbar {
-  height: 6px;
-}
-.newarrivalcards::-webkit-scrollbar-thumb {
-  background: #bbb;
-  border-radius: 10px;
-}
-.newarrivalcards::-webkit-scrollbar-track {
-  background: #e9e9e9;
+    height: 6px;
 }
 
-/* 🧩 Card container */
+.newarrivalcards::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
+}
+
+.newarrivalcards::-webkit-scrollbar-track {
+    background: #e9e9e9;
+}
+
+
 .card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* make elements stretch evenly */
-  height: 100%; /* ensure equal card heights */
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+    background: #ffffff6d;
+    border: 1px solid #edebeb;
+    backdrop-filter: blur(12px) saturate(180%) brightness(130%) contrast(95%);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
 }
 
-/* 🖼️ Image */
+
 .cardimg {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  background: #fff;
-  padding: 10px;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #fff;
+    padding: 10px;
 }
 
 .cardinfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* space out product info & button */
-  flex-grow: 1; /* ensures it takes all available space */
-  padding: 12px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    flex-grow: 1;
+
+    padding: 12px 14px 16px;
 }
 
 .productname {
-  font-size: 15px;
-  color: #111;
-  font-weight: 600;
-  margin-bottom: 6px;
-  line-height: 1.3;
+    font-size: 15px;
+    color: #111;
+    font-weight: 600;
+    margin-bottom: 6px;
+    line-height: 1.3;
 }
 
 .rating {
-  font-size: 13px;
-  color: #f7a400;
-  margin-bottom: 6px;
+    font-size: 13px;
+    color: #f7a400;
+    margin-bottom: 6px;
 }
+
 .rating span {
-  color: #555;
-  font-size: 12px;
-  margin-left: 4px;
+    color: #555;
+    font-size: 12px;
+    margin-left: 4px;
 }
 
 .price {
-  font-size: 16px;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
 }
 
-/* 🛒 Add to Cart */
 
 .cartbtn {
-  margin-top: auto; /* push to bottom */
-  background: #ffd814;
-  border: 1px solid #fcd200;
-  border-radius: 8px;
-  color: #111;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 8px 0;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.2s ease;
+    margin-top: auto;
+    background: #ffd814c6;
+    backdrop-filter: blur(15px) saturate(180%) brightness(130%) contrast(95%);
+    border: 1px solid #fcd200;
+    border-radius: 8px;
+    color: #111;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 0;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
 
 .cartbtn:hover {
-  background: #f7ca00;
+    background: #f7ca00;
 }
 
-/* 📱 Responsive tweaks */
+
 @media (max-width: 1024px) {
-  .newarrivalcards {
-    grid-auto-columns: 25%;
-  }
+    .newarrivalcards {
+        grid-auto-columns: 25%;
+    }
 }
+
 @media (max-width: 768px) {
-  .newarrivalcards {
-    grid-auto-columns: 40%;
-    padding: 20px;
-  }
+    .newarrivalcards {
+        grid-auto-columns: 40%;
+        padding: 20px;
+    }
 }
+
 @media (max-width: 480px) {
-  .newarrivalcards {
-    grid-auto-columns: 70%;
-  }
-  .cardimg {
-    height: 180px;
-  }
+    .newarrivalcards {
+        grid-auto-columns: 70%;
+    }
+
+    .cardimg {
+        height: 180px;
+    }
 }
 
 .others {
-  padding: 40px 20px;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 40px 20px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 
@@ -391,11 +429,12 @@ body {
     }
 
     .others {
-  padding: 40px 20px;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(2, 1fr); /* two equal-width columns */
-}
+        padding: 40px 20px;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
 
 
 }

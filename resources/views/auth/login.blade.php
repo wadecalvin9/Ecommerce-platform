@@ -12,15 +12,19 @@
 <body>
     <div class="container">
         <h2>Sign In to Continue</h2>
-        <form class="formcontainer">
+        @if (session('error'))
+            <p style="color: red">{{ session('error')}}</p>
+        @endif
+        <form class="formcontainer" method="post" action="{{ route('auth.login') }}">
+            @csrf
             <div class="inputgroup">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="you@example.com" required>
+                <input type="email" id="email" placeholder="you@example.com" required name="email">
             </div>
 
             <div class="inputgroup">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="••••••••" required>
+                <input type="password" id="password" placeholder="••••••••" required name="password">
             </div>
 
             <button type="submit">Sign In</button>

@@ -32,16 +32,31 @@
 
         <div class="icons">
             @auth
-                <a href="/profile" class="navlink"><i class="fa-solid fa-user"></i></a>
+                <a href="" class="navlink">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <a href="" class="navlink">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+                <a href="" class="navlink">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
 
+                <form action="{{ route('auth.logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="navlink" style="background: none; border: none; cursor: pointer;">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </form>
             @endauth
-            @guest
-                <a href="/register" class="navlink"><i class="fa-solid fa-user"></i></a>
 
+            @guest
+                <a href="{{ route('auth.login') }}" class="navlink">
+                    <i class="fa-solid fa-user"></i>
+                </a>
             @endguest
-            <a href="/wishlist" class="navlink"><i class="fa-solid fa-heart"></i></a>
-            <a href="/cart" class="navlink"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
+
 
         <!-- Mobile Menu Button -->
         <a id="menuopenbtn" class="menuopenbtn"><i class="fa-solid fa-bars"></i></a>
@@ -65,15 +80,30 @@
         </div>
 
         <div class="icons">
-            @auth
-                <a href="/profile" class="navlink"><i class="fa-solid fa-user"></i></a>
-            @endauth
-            @guest
-                <a href="/register" class="navlink"><i class="fa-solid fa-user"></i></a>
+           @auth
+                <a href="" class="navlink">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <a href="" class="navlink">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+                <a href="" class="navlink">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
 
+                <form action="{{ route('auth.logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="navlink" style="background: none; border: none; cursor: pointer;">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </button>
+                </form>
+            @endauth
+
+            @guest
+                <a href="{{ route('auth.login') }}" class="navlink">
+                    <i class="fa-solid fa-user"></i>
+                </a>
             @endguest
-            <a href="/wishlist" class="navlink"><i class="fa-solid fa-heart"></i></a>
-            <a href="/cart" class="navlink"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </div>
 
@@ -130,7 +160,8 @@
             <img class="cardimg" src="https://m.media-amazon.com/images/I/81x2mbPJiBL._AC_UL640_QL65_.jpg"
                 alt="">
             <div class="cardinfo">
-                <div class="productname">ZITY Men's Flannel Hoodie Shirts Casual Button Down Plaid Shirt Jackets for Men
+                <div class="productname">ZITY Men's Flannel Hoodie Shirts Casual Button Down Plaid Shirt Jackets for
+                    Men
                     Long Sleeve Stylish Hooded </div>
                 <div class="rating">
                     ★★★★☆ <span>(154)</span>
