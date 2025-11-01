@@ -21,3 +21,12 @@ Route::get('/register', function () {
 Route::post('/register', [AuthController::class, 'Register'])->name('auth.register');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+
+//user routes
+Route::get('/profile', function () {
+    return view('profile.index');
+})->name('user.profile');
+Route::get('/edit', function () {
+    return view('profile.edit');
+})->name('user.profile.edit');

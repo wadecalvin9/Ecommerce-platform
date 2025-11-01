@@ -19,9 +19,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 10px 20px;
     z-index: 10;
     background: transparent;
+    background-color: #64646498;
+    backdrop-filter: blur(12px) saturate(180%) brightness(130%) contrast(95%);
 }
 .navlink {
     text-decoration: none;

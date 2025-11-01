@@ -17,3 +17,8 @@ document.querySelectorAll('.mobilenav .navlink').forEach(link => {
   });
 });
 
+// Side filter toggle
+$('#hideside').click(function(){
+    $('.side').toggle();
+})
+
