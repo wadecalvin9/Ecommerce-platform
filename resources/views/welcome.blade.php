@@ -9,9 +9,7 @@
             and let your wardrobe shine with effortless sophistication.
         </p>
         <a href="/shop" class="cta-button">Explore Collection</a>
-
     </div>
-
     <div class="tittle">
         <h2>New Arrivals</h2>
     </div>
@@ -19,179 +17,41 @@
     </div>
     <!-- NEW ARRIVALS -->
     <div class="newarrivalcards">
+        @foreach ($products as $product )
         <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/61jYaoKvuJL._AC_UL640_QL65_.jpg"
+            <img class="cardimg" src="{{ $product->image_url }}"
                 alt="">
             <div class="cardinfo">
-                <div class="productname">Aelfric Eden Oversized Sweater 90s Vintage Cable Knit Long Sleeve Women Heavy
-                    Crewneck Pullover</div>
+                <div class="productname">{{ $product->name }}</div>
                 <div class="rating">
                     ★★★★☆ <span>(230)</span>
                 </div>
-                <div class="price">$43.99</div>
+                <div class="price">${{ $product->price }}</div>
                 <button class="cartbtn">Add to Cart</button>
             </div>
         </div>
-
-        <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/617TbkkZC4L._AC_UL640_QL65_.jpg"
-                alt="">
-            <div class="cardinfo">
-                <div class="productname">PLEPAN Men's Casual Cargo Pants Drawstring Hiking Pants Workout Tactical
-                    Joggers Sweatpants for Men</div>
-                <div class="rating">
-                    ★★★★☆ <span>(154)</span>
-                </div>
-                <div class="price">$17.99</div>
-                <button class="cartbtn">Add to Cart</button>
-            </div>
+        @endforeach
         </div>
-
-        <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/81x2mbPJiBL._AC_UL640_QL65_.jpg"
-                alt="">
-            <div class="cardinfo">
-                <div class="productname">ZITY Men's Flannel Hoodie Shirts Casual Button Down Plaid Shirt Jackets for
-                    Men
-                    Long Sleeve Stylish Hooded </div>
-                <div class="rating">
-                    ★★★★☆ <span>(154)</span>
-                </div>
-                <div class="price">$23.28</div>
-                <button class="cartbtn">Add to Cart</button>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/718wzXgnS-L._AC_UL640_FMwebp_QL65_.jpg"
-                alt="">
-            <div class="cardinfo">
-                <div class="productname">AUTOMET Womens Long Sleeve Tshirts Business Casual Tunic Work Tops Fashion
-                    Cute Sweaters Fall Outfits 2025</div>
-                <div class="rating">
-                    ★★★★☆ <span>(154)</span>
-                </div>
-                <div class="price">$11.99</div>
-                <button class="cartbtn">Add to Cart</button>
-            </div>
-        </div>
-
-
-
-        <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/817Ygaz9iqL._AC_UL640_FMwebp_QL65_.jpg"
-                alt="">
-            <div class="cardinfo">
-                <div class="productname">WIHOLL Womens Sweaters Trendy Color Block Tops Long Sleeve Shirts Fall Outfits
-                    Early Fall Fashion 2025 Winter </div>
-                <div class="rating">
-                    ★★★★☆ <span>(154)</span>
-                </div>
-                <div class="price">$120</div>
-                <button class="cartbtn">Add to Cart</button>
-            </div>
-        </div>
-
-
-
-        <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/61N5Hfjqi4L._AC_UL640_FMwebp_QL65_.jpg"
-                alt="">
-            <div class="cardinfo">
-                <div class="productname">Dear Math Grow Up And Solve Your Own Problems Teens Trendy T-Shirt</div>
-                <div class="rating">
-                    ★★★★☆ <span>(154)</span>
-                </div>
-                <div class="price">$120</div>
-                <button class="cartbtn">Add to Cart</button>
-            </div>
-        </div>
-    </div>
-
     <div class="tittle">
         <h2>Sponsored products</h2>
     </div>
 
     <!-- Sponsored products -->
     <div class="newarrivalcards">
+         @foreach ($products as $product )
         <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/71r3saQUmKL._AC_UL640_FMwebp_QL65_.jpg"
+            <img class="cardimg" src="{{ $product->image_url }}"
                 alt="">
             <div class="cardinfo">
-                <div class="productname">Disney Princess Zip Up Hoodie Infant to Big Kid Sizes (18 Months - 14-16)
-                </div>
+                <div class="productname">{{ $product->name }}</div>
                 <div class="rating">
-                    ★★★☆ <span>(230)</span>
+                    ★★★★☆ <span>(230)</span>
                 </div>
-                <div class="price">$12.49</div>
+                <div class="price">${{ $product->price }}</div>
                 <button class="cartbtn">Add to Cart</button>
             </div>
         </div>
-
-        <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/81SbCv4YisL._AC_UL640_FMwebp_QL65_.jpg"
-                alt="">
-            <div class="cardinfo">
-                <div class="productname">Girls Fleece Lined Leggings Cotton Kids Winter Warm Leggings Thick Thermal
-                    Tights Pants</div>
-                <div class="rating">
-                    ★★★★☆ <span>(154)</span>
-                </div>
-                <div class="price">$11.89</div>
-                <button class="cartbtn">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/71UajD31lvL._AC_UL640_FMwebp_QL65_.jpg"
-                alt="">
-            <div class="cardinfo">
-                <div class="productname">10th Birthday Boy Level 10 Gamer 10 Year Video Game Party T-Shirt</div>
-                <div class="rating">
-                    ★★★★☆ <span>(154)</span>
-                </div>
-                <div class="price">$12.40</div>
-                <button class="cartbtn">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/618xOVHAX4L._AC_UL640_FMwebp_QL65_.jpg"
-                alt="">
-            <div class="cardinfo">
-                <div class="productname">Disney Pixar The Incredibles Logo Symbol Costume T-Shirt</div>
-                <div class="rating">
-                    ★★★★☆ <span>(154)</span>
-                </div>
-                <div class="price">$120</div>
-                <button class="cartbtn">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/81MlkdZ2yPL._AC_UL640_FMwebp_QL65_.jpg"
-                alt="">
-            <div class="cardinfo">
-                <div class="productname">Hawaiian Shirts for Women Tropical Shirt Summer Beach Button Down Short Sleeve
-                    Blouses Floral Top Aloha Luau Outfits 2025</div>
-                <div class="rating">
-                    ★★★★☆ <span>(154)</span>
-                </div>
-                <div class="price">$13.0</div>
-                <button class="cartbtn">Add to Cart</button>
-            </div>
-        </div>
-        <div class="card">
-            <img class="cardimg" src="https://m.media-amazon.com/images/I/61QAIqP7pcL._AC_UL640_FMwebp_QL65_.jpg"
-                alt="">
-            <div class="cardinfo">
-                <div class="productname">I'm Different Funny Building Blocks Master Builder Boys T-Shirt</div>
-                <div class="rating">
-                    ★★★★☆ <span>(154)</span>
-                </div>
-                <div class="price">$16.6</div>
-                <button class="cartbtn">Add to Cart</button>
-            </div>
-        </div>
+        @endforeach
     </div>
 
     <div class="others">

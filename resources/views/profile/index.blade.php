@@ -23,7 +23,7 @@
                             <label for="avatar-upload" class="camera-icon">
                                 <i class="fa-solid fa-camera"></i>
                             </label>
-                            <input id="avatar-upload" type="file" hidden>
+                            <x-cloudinary::widget>Upload Files</x-cloudinary::widget>
                         </div>
 
                         <div class="upload-section">
@@ -34,6 +34,12 @@
 
                     <!-- Right side -->
                     <div class="profile-info">
+                        @if (session('success'))
+                            <div class="success-message">
+                                {{ session('success') }}
+                            </div>
+
+                        @endif
                         <p><strong>Name:</strong> {{ Auth::user()->name ?? 'User Name' }}</p>
                         <p><strong>Email:</strong> {{ Auth::user()->email ?? 'user@email.com' }}</p>
                         <p><strong>Phone Number:</strong> +254 712 345 678</p>

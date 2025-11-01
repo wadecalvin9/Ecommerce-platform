@@ -55,4 +55,21 @@ class AuthController extends Controller
     }
 
 
+    public function update (Request $request){
+
+         $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+
+        ]);
+
+        $id = Auth::user()->id;
+        $user = User::findOrFail($id);
+        $user->update($data);
+
+        return redirect(route('user.profile'))->with('success','Profile updated successfully');
+
+    }
+
+
 }

@@ -106,7 +106,7 @@
             @endguest
         </div>
     </div>
-  
+
     {{ $slot }}
 
 </body>

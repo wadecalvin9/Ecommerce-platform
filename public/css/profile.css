@@ -319,3 +319,13 @@ body {
     font-size: 0.95rem;
   }
 }
+
+.success-message {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #10b981;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
