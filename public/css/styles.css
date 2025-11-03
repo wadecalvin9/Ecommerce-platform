@@ -9,6 +9,7 @@ body {
     overflow: auto;
     scroll-behavior: smooth;
     overscroll-behavior-inline: contain;
+    padding: 10px;
 
 }
 
@@ -92,6 +93,7 @@ body {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     background-color: #cd7115;
+    transition: 1.9s ease-in-out;
 }
 
 
@@ -116,10 +118,7 @@ body {
     transition: transform 15s ease;
 }
 
-.hero:hover .heroimg {
-    transform: scale(1.2);
 
-}
 
 .hero h1 {
     font-size: clamp(2rem, 5vw, 4rem);

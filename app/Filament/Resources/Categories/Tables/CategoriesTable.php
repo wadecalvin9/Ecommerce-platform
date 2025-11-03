@@ -1,34 +1,23 @@
 <?php
 
-namespace App\Filament\Resources\Products\Tables;
+namespace App\Filament\Resources\Categories\Tables;
 
-use App\Models\Category;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Forms\Components\TextInput\Actions\CopyAction;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Actions;
-use Filament\Actions\Action;
-use Filament\Forms\Components\Select;
-use Filament\Tables\Columns\SelectColumn;
 
-class ProductsTable
+class CategoriesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->searchable()
-                    ->limit(20),
-                TextColumn::make('price')
-                    ->money('Ksh')
-                    ->sortable(),
-                ImageColumn::make('image_url'),
-                SelectColumn::make('category_id')->options(Category::query()->pluck('name','id')),
+                    ->searchable(),
+                TextColumn::make('slug')
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -43,21 +32,11 @@ class ProductsTable
             ])
             ->recordActions([
                 EditAction::make(),
-
-
-
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
             ]);
-
-
-
-
-
     }
-
-
 }
