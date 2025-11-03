@@ -50,4 +50,16 @@ class ProductController extends Controller
         $cartItems = Cart::where('user_id', auth()->id())->get();
         return view('welcome', compact('products', 'cartItems'));
     }
+public function search(Request $request)
+{
+    $validated = $request->validate([
+        'SearchTerm' => 'required|string'
+    ]);
+
+    $searchTerm = $validated['SearchTerm'];
+
+    $products = Product::where('name', 'like', '%' . $searchTerm . '%')->get();
+    $cartItems = Cart::where('user_id', auth()->id())->get();
+    return view('welcome', compact('products','cartItems'));
+}
 }

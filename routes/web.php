@@ -44,6 +44,8 @@ Route::post('/wishlist/add/{id}', [WishlistController::class, 'addToWishlist'])-
 Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
 Route::delete('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wish.remove');
 
+Route::get('/search',[ProductController::class, 'search'])->name('search');
+
 
 //cart routes
 Route::get('/cart', [App\Http\Controllers\CartController::class, 'cartindex'])->name('cart.index');
