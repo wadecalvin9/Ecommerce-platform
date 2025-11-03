@@ -257,8 +257,46 @@ body {
     margin-bottom: 10px;
 }
 
+.actionbtns {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.wishcartbtn{
+    flex: 1;
+    margin-top: auto;
+    background: #f40202c6;
+    backdrop-filter: blur(15px) saturate(180%) brightness(130%) contrast(95%);
+    border: 1px solid #fc1900;
+    border-radius: 8px;
+    color: #111;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 0;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    text-decoration: none;
+
+}
+
+.success{
+    color: green;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.info{
+    color: blue;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
 
 .cartbtn {
+    flex: 3;
     margin-top: auto;
     background: #ffd814c6;
     backdrop-filter: blur(15px) saturate(180%) brightness(130%) contrast(95%);
@@ -271,6 +309,7 @@ body {
     text-align: center;
     cursor: pointer;
     transition: background 0.2s ease;
+    text-decoration: none;
 }
 
 .cartbtn:hover {

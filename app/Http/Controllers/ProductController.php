@@ -4,7 +4,17 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
+
 {
+
+    public function home(){
+        return view('welcome');
+    }
+
+
+
+
+
     public function store(Request $request)
     {
         $data = $request->validate([

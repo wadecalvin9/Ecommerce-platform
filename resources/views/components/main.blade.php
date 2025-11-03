@@ -38,7 +38,7 @@
                 <a href="" class="navlink">
                     <i class="fa-solid fa-heart"></i>
                 </a>
-                <a href="" class="navlink">
+                <a href="{{ route('cart.index') }}" class="navlink">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
 
@@ -87,7 +87,7 @@
                 <a href="" class="navlink">
                     <i class="fa-solid fa-heart"></i>
                 </a>
-                <a href="" class="navlink">
+                <a href="{{ route('cart.index') }}" class="navlink">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </a>
 

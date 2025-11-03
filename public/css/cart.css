@@ -1,0 +1,162 @@
+/* Reset and base */
+.cart-page {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.cart-page h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #1E3A8A;
+}
+
+/* Table styling */
+.table-container {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 700px;
+}
+
+.table thead {
+    background: #1E3A8A;
+    color: #fff;
+}
+
+.table th, .table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.table th {
+    font-weight: 600;
+}
+
+.tdimage {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: #f5f5f5;
+}
+
+/* Buttons */
+.edit-btn, .delete-btn {
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background: #2563EB;
+    color: #fff;
+}
+
+.delete-btn {
+    background: #EF4444;
+    color: #fff;
+    margin-left: 5px;
+}
+
+/* Status colors */
+.status {
+    font-weight: 600;
+}
+
+.status.available {
+    color: #16A34A;
+}
+
+.status.out {
+    color: #F97316;
+}
+
+/* Quantity controls */
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.qty-controls input {
+    width: 50px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.qty-btn {
+    border: none;
+    background: #E5E7EB;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Cart summary */
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: #F9FAFB;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cart-summary h3 {
+    color: #1E3A8A;
+}
+
+.checkout-btn {
+    background: #1E3A8A;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s ease-in-out;
+}
+
+.checkout-btn:hover {
+    background: #2563EB;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table th, .table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .qty-controls input {
+        width: 40px;
+    }
+
+    .checkout-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cart-summary {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

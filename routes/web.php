@@ -4,23 +4,18 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WishlistController;
 
-route::get('/products', function(){
+route::get('/products', function () {
     return view('products.add');
-
 });
 
 Route::get('/products/add', [ProductController::class, 'create'])->name('product.create');
 Route::post('/products/add', [ProductController::class, 'store'])->name('product.add');
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-Route::get('/', [ProductController::class, 'index'])->name('products.list');
 
-
-
+Route::get('/', [ProductController::class, 'index'])->name('home');
 
 
 //auth routes
@@ -42,5 +37,17 @@ Route::get('/profile', function () {
 Route::get('/edit', function () {
     return view('profile.edit');
 })->name('user.profile.edit');
+
+
+//Wishlist routes
+Route::post('/wishlist/add/{id}', [WishlistController::class, 'addToWishlist'])->name('wishlist.add');
+
+
+//cart routes
+Route::get('/cart', function () {
+    return view('cart.index');
+})->name('cart.index');
+
+
 
 Route::put('/profile/update', [AuthController::class, 'update'])->name('user.profile.update');
