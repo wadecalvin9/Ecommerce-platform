@@ -13,10 +13,16 @@ class Product extends Model
         'image_url',
         'image_public_id',
     ];
+
     public function wishlists()
     {
         return $this->hasMany(Wishlist::class);
     }
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
+
 
 
 }

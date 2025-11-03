@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Models\Cart;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
@@ -44,8 +46,9 @@ class ProductController extends Controller
 
 
     public function index(){
-        $products = Product::all();
-        return view('welcome', compact('products'));
+        $products = Product::latest()->get();
+        $cartItems = Cart::all();
+        return view('welcome', compact('products', 'cartItems'));
     }
 
 

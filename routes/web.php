@@ -44,9 +44,10 @@ Route::post('/wishlist/add/{id}', [WishlistController::class, 'addToWishlist'])-
 
 
 //cart routes
-Route::get('/cart', function () {
-    return view('cart.index');
-})->name('cart.index');
+Route::get('/cart', [App\Http\Controllers\CartController::class, 'cartindex'])->name('cart.index');
+Route::post('/cart/add/{id}', [App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.add');
+Route::put('/cart/update/{id}', [App\Http\Controllers\CartController::class, 'update'])->name('cart.update');
+Route::delete('/cart/remove/{id}', [App\Http\Controllers\CartController::class, 'remove'])->name('cart.remove');
 
 
 

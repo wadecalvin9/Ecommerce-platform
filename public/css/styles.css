@@ -264,7 +264,7 @@ body {
 }
 
 .wishcartbtn{
-    flex: 1;
+    flex: 2;
     margin-top: auto;
     background: #f40202c6;
     backdrop-filter: blur(15px) saturate(180%) brightness(130%) contrast(95%);
@@ -278,6 +278,7 @@ body {
     cursor: pointer;
     transition: background 0.2s ease;
     text-decoration: none;
+    width: 40px;
 
 }
 

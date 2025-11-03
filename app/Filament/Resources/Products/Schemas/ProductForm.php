@@ -33,7 +33,9 @@ class ProductForm
                     $url = Storage::disk('cloudinary')->url($path);
                     $set('image_url', $url);
                     return $url;
-                })
+                }),
+            TextInput::make('image_url'),
+
         ]);
     }
 }
