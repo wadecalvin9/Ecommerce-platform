@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Wishlist;
 use App\Models\User;
@@ -20,7 +21,8 @@ class WishlistController extends Controller
         $exists = Wishlist::where('product_id', $data['product_id'])->exists();
 
         if ($exists) {
-            return back()->with('info', 'Product is already in your wishlist!');
+            return redirect()->back()->with('info', 'Product is already in your wishlist!');
+
         }
 
 
@@ -32,8 +34,10 @@ class WishlistController extends Controller
     public function index(){
         $user = Auth::user()->id;
         $wishItems = Wishlist::where('user_id',$user)->get();
+        $cartItems = Cart::all();
 
-        return view('wishlist.index',compact('wishItems'));
+
+        return view('wishlist.index',compact('wishItems','cartItems'));
     }
 
     public function remove($id){

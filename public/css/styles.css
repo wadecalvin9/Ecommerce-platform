@@ -9,6 +9,7 @@ body {
     overflow: auto;
     scroll-behavior: smooth;
     overscroll-behavior-inline: contain;
+
 }
 
 .nav {
@@ -25,6 +26,7 @@ body {
     background-color: #64646498;
     backdrop-filter: blur(12px) saturate(180%) brightness(130%) contrast(95%);
 }
+
 .navlink {
     text-decoration: none;
     color: rgb(211, 211, 211);
@@ -53,7 +55,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, rgba(255,255,255,0.35), rgba(255,255,255,0.05));
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.05));
     opacity: 0;
     transition: opacity 0.35s ease;
     border-radius: inherit;
@@ -72,6 +74,11 @@ body {
 }
 
 .hero {
+    background-image: url('https://images.pexels.com/photos/13680054/pexels-photo-13680054.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
     position: relative;
     height: 70vh;
     display: flex;
@@ -82,6 +89,9 @@ body {
     color: #fff;
     overflow: hidden;
     padding: 100px 20px 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #cd7115;
 }
 
 
@@ -143,10 +153,12 @@ body {
     z-index: 2;
     transition: all 0.3s ease;
     animation: fadeInUp 1.8s ease forwards;
+    transition: color 0.6s;
 }
 
 .hero a:hover {
-    background: #ffffff40;
+    background: #cd711585;
+
     color: #000;
     transform: scale(1.05);
     backdrop-filter: blur(5px) contrast(80%) brightness(120%);
@@ -154,10 +166,9 @@ body {
 
 
 .tittle {
-    text-align: center;
+
     margin: 20px 0;
 }
-
 
 .newarrivalcards {
     display: grid;
@@ -173,19 +184,22 @@ body {
     scroll-padding-inline: 40px;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    scrollbar-color: #f68b1e #f3f3f3;
 }
 
 .newarrivalcards::-webkit-scrollbar {
     height: 6px;
+    color: #f68b1e;
 }
 
 .newarrivalcards::-webkit-scrollbar-thumb {
-    background: #bbb;
+    background: #f68b1e;
     border-radius: 10px;
 }
 
 .newarrivalcards::-webkit-scrollbar-track {
-    background: #e9e9e9;
+    background: #f68b1e;
+    color: #f68b1e;
 }
 
 
@@ -263,7 +277,7 @@ body {
     margin-bottom: 5px;
 }
 
-.wishcartbtn{
+.wishcartbtn {
     flex: 2;
     margin-top: auto;
     background: #f40202c6;
@@ -282,13 +296,14 @@ body {
 
 }
 
-.success{
+.success {
     color: green;
     text-align: center;
     margin-bottom: 10px;
     font-weight: 600;
 }
-.info{
+
+.info {
     color: blue;
     text-align: center;
     margin-bottom: 10px;
@@ -299,14 +314,14 @@ body {
 .cartbtn {
     flex: 3;
     margin-top: auto;
-    background: #ffd814c6;
+    background: #f68b1e;
     backdrop-filter: blur(15px) saturate(180%) brightness(130%) contrast(95%);
-    border: 1px solid #fcd200;
+    border: 1px solid #f68b1e;
     border-radius: 8px;
     color: #111;
     font-weight: 600;
     font-size: 14px;
-    padding: 8px 0;
+    padding: 10px 4px;
     text-align: center;
     cursor: pointer;
     transition: background 0.2s ease;
@@ -479,5 +494,54 @@ body {
 
     }
 
+
+}
+
+.search {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 30px;
+    gap: 10px;
+
+
+
+}
+
+.search i {
+    font-size: 30px;
+}
+
+.search input {
+    width: 400px;
+    height: 40px;
+    font-size: larger;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.search input:focus {
+    outline: 3px solid #f68b1e;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+
+
+
+}
+
+.search button {
+    padding: 10px;
+    background-color: #f68b1e;
+    border-color: #cd7115;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px rgba(30, 30, 31, 0.5);
+    cursor: pointer;
+    transition:  color 0.3s ease;
+}
+
+.search button:hover{
+    background-color: #f09942;
 
 }

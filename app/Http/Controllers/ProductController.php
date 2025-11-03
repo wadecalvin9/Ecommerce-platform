@@ -47,10 +47,7 @@ class ProductController extends Controller
 
     public function index(){
         $products = Product::latest()->get();
-        $cartItems = Cart::all();
+        $cartItems = Cart::where('user_id', auth()->id())->get();
         return view('welcome', compact('products', 'cartItems'));
     }
-
-
-
 }

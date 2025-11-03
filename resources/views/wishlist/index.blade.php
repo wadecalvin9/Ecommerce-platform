@@ -37,8 +37,17 @@
                                         @csrf
                                         @method('DELETE')
                                         <button class="delete-btn">Remove</button>
+                                        <a  href="" style="background-color:rgba(240, 248, 255, 0.194); color: black;" class="delete-btn">View</a>
                                     </form>
+
+
+
+
                                 </td>
+
+
+
+
                             </tr>
                         @endforeach
 

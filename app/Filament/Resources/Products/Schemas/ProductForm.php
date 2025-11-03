@@ -23,9 +23,9 @@ class ProductForm
             TextInput::make('price')
                 ->required()
                 ->numeric()
-                ->prefix('$'),
+                ->prefix('Ksh'),
 
-            FileUpload::make('image_url')
+            /*FileUpload::make('image_url')
                 ->label('Product Image')
                 ->image()
                 ->saveUploadedFileUsing(function ($file, $record, $set) {
@@ -33,7 +33,7 @@ class ProductForm
                     $url = Storage::disk('cloudinary')->url($path);
                     $set('image_url', $url);
                     return $url;
-                }),
+                }), */
             TextInput::make('image_url'),
 
         ]);

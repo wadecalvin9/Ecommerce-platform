@@ -23,7 +23,7 @@ class ProductsTable
                     ->searchable()
                     ->limit(20),
                 TextColumn::make('price')
-                    ->money()
+                    ->money('Ksh')
                     ->sortable(),
                 ImageColumn::make('image_url'),
                 TextColumn::make('created_at')

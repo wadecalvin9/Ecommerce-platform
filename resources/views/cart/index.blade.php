@@ -23,7 +23,7 @@
                         <tr>
                             <td><img src="{{ $item->product->image_url }}" class="tdimage" alt=""></td>
                             <td>{{ substr($item->product->name, 0, 20) }}</td>
-                            <td>${{ $item->product->price * $item->quantity }}</td>
+                            <td>Ksh {{ number_format($item->product->price * $item->quantity)  }}</td>
                             <td>
                                 <div class="qty-controls">
                                     <form class="update-form" action="{{ route('cart.update', $item->id) }}"
@@ -58,7 +58,7 @@
                     });
                 @endphp
 
-                <h3>Total: $ {{ $totalAmount }} </h3>
+                <h3>Total: Ksh {{ number_format($totalAmount ) }} </h3>
             </div>
             <button class="checkout-btn">Proceed to Checkout</button>
         </div>
