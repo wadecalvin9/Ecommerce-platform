@@ -41,6 +41,8 @@ Route::get('/edit', function () {
 
 //Wishlist routes
 Route::post('/wishlist/add/{id}', [WishlistController::class, 'addToWishlist'])->name('wishlist.add');
+Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+Route::delete('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wish.remove');
 
 
 //cart routes

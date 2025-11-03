@@ -35,7 +35,7 @@
                 <a href="/profile" class="navlink">
                     <i class="fa-solid fa-user"></i>
                 </a>
-                <a href="" class="navlink">
+                <a href="/wishlist" class="navlink">
                     <i class="fa-solid fa-heart"></i>
                 </a>
                 <a href="{{ route('cart.index') }}" class="navlink">

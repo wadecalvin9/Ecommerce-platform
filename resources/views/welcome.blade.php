@@ -1,7 +1,4 @@
 <x-main>
-
-
-
     <div class="tittle" style="padding-top:40px ">
         <h2>New Arrivals</h2>
     </div>
@@ -25,30 +22,31 @@
                         ★★★★☆ <span>(230)</span>
                     </div>
                     <div class="price">${{ $product->price }}</div>
-                    <div class="actionbtns">
-                        @if ($cartItems->contains('product_id', $product->id))
-                            <button style="background-color:gray; border: black; " class="cartbtn" disabled>In
-                                Cart</button>
-                        @else
-                            <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                    @auth
+                        <div class="actionbtns">
+                            @if ($cartItems->contains('product_id', $product->id))
+                                <button style="background-color:gray; border: black; " class="cartbtn" disabled>In
+                                    Cart</button>
+                            @else
+                                <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                    <button type="submit" class="cartbtn">Add to Cart</button>
+                                </form>
+                            @endif
+                            <form action="{{ route('wishlist.add', $product->id) }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                                <button type="submit" class="cartbtn">Add to Cart</button>
+                                <button class="wishcartbtn"><i class="fa-solid fa-heart"></i></button>
+
                             </form>
-                        @endif
 
+                        </div>
 
+                    @endauth
 
-                        <form action="{{ route('wishlist.add', $product->id) }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                            <button class="wishcartbtn"><i class="fa-solid fa-heart"></i></button>
-
-                        </form>
-
-                    </div>
 
                 </div>
             </div>
@@ -69,30 +67,35 @@
                         ★★★★☆ <span>(230)</span>
                     </div>
                     <div class="price">${{ $product->price }}</div>
-                    <div class="actionbtns">
-                        @if ($cartItems->contains('product_id', $product->id))
-                            <button style="background-color:gray; border: black; " class="cartbtn" disabled> in
-                                Cart</button>
-                        @else
-                            <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                    @auth
+                        <div class="actionbtns">
+
+                            @if ($cartItems->contains('product_id', $product->id))
+                                <button style="background-color:gray; border: black; " class="cartbtn" disabled> in
+                                    Cart</button>
+                            @else
+                                <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                    <button type="submit" class="cartbtn">Add to Cart</button>
+                                </form>
+                            @endif
+
+
+
+                            <form action="{{ route('wishlist.add', $product->id) }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                                <button type="submit" class="cartbtn">Add to Cart</button>
+                                <button class="wishcartbtn"><i class="fa-solid fa-heart"></i></button>
+
                             </form>
-                        @endif
 
+                        </div>
 
+                    @endauth
 
-                        <form action="{{ route('wishlist.add', $product->id) }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                            <button class="wishcartbtn"><i class="fa-solid fa-heart"></i></button>
-
-                        </form>
-
-                    </div>
                 </div>
             </div>
         @endforeach
@@ -108,27 +111,30 @@
                         ★★★★☆ <span>(230)</span>
                     </div>
                     <div class="price">${{ $product->price }}</div>
-                    <div class="actionbtns">
-                        @if ($cartItems->contains('product_id', $product->id))
-                            <button style="background-color:gray; border: black; " class="cartbtn" disabled>in
-                                Cart</button>
-                        @else
-                            <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                    @auth
+                        <div class="actionbtns">
+                            @if ($cartItems->contains('product_id', $product->id))
+                                <button style="background-color:gray; border: black; " class="cartbtn" disabled>in
+                                    Cart</button>
+                            @else
+                                <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                    <button type="submit" class="cartbtn">Add to Cart</button>
+                                </form>
+                            @endif
+                            <form action="{{ route('wishlist.add', $product->id) }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                 <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                                <button type="submit" class="cartbtn">Add to Cart</button>
+                                <button class="wishcartbtn"><i class="fa-solid fa-heart"></i></button>
+
                             </form>
-                        @endif
-                        <form action="{{ route('wishlist.add', $product->id) }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                            <button class="wishcartbtn"><i class="fa-solid fa-heart"></i></button>
 
-                        </form>
+                        </div>
+                    @endauth
 
-                    </div>
                 </div>
             </div>
         @endforeach

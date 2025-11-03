@@ -27,4 +27,18 @@ class WishlistController extends Controller
         Wishlist::create($data);
         return back()->with('success', 'Product added to wishlist!');
     }
+
+
+    public function index(){
+        $user = Auth::user()->id;
+        $wishItems = Wishlist::where('user_id',$user)->get();
+
+        return view('wishlist.index',compact('wishItems'));
+    }
+
+    public function remove($id){
+        $item = Wishlist::findOrFail($id);
+        $item->delete();
+        return redirect(route('wishlist.index'))->with('Success','Item removed successfully from Wishlist');
+    }
 }
