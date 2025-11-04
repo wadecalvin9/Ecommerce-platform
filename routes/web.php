@@ -13,7 +13,7 @@ route::get('/products', function () {
 Route::get('/products/add', [ProductController::class, 'create'])->name('product.create');
 Route::post('/products/add', [ProductController::class, 'store'])->name('product.add');
 
-
+Route::get('/product/details/{id}', [ProductController::class, 'show'])->name('product.show');
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
 

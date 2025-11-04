@@ -1,15 +1,18 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Storage;
+
 class ProductController extends Controller
 
 {
 
-    public function home(){
+    public function home()
+    {
         return view('welcome');
     }
 
@@ -45,22 +48,38 @@ class ProductController extends Controller
     }
 
 
-    public function index(){
+    public function index()
+    {
         $products = Product::latest()->get();
 
         $cartItems = Cart::where('user_id', auth()->id())->get();
         return view('welcome', compact('products', 'cartItems'));
     }
-public function search(Request $request)
-{
-    $validated = $request->validate([
-        'SearchTerm' => 'required|string'
-    ]);
+    public function search(Request $request)
+    {
+        $validated = $request->validate([
+            'SearchTerm' => 'required|string'
+        ]);
 
-    $searchTerm = $validated['SearchTerm'];
+        $searchTerm = $validated['SearchTerm'];
 
-    $products = Product::where('name', 'like', '%' . $searchTerm . '%')->get();
-    $cartItems = Cart::where('user_id', auth()->id())->get();
-    return view('welcome', compact('products','cartItems'));
-}
+        $products = Product::where('name', 'like', '%' . $searchTerm . '%')->get();
+        $cartItems = Cart::where('user_id', auth()->id())->get();
+        return view('welcome', compact('products', 'cartItems'));
+    }
+
+    public function show(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+
+        $cartItems = collect();
+        $cartcount = 0;
+
+        if (auth()->check()) {
+            $cartItems = Cart::where('user_id', auth()->id())->get();
+            $cartcount = $cartItems->count();
+        }
+
+        return view('products.details', compact('product', 'cartItems', 'cartcount'));
+    }
 }

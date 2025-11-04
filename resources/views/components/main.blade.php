@@ -16,6 +16,11 @@
     <script defer src="{{ asset('js/script.js') }}"></script>
 </head>
 
+<style>
+
+
+</style>
+
 <body>
     <!-- NAV -->
     <div class="nav">
@@ -35,12 +40,15 @@
                 <a href="/profile" class="navlink">
                     <i class="fa-solid fa-user"></i>
                 </a>
-                <a href="/wishlist" class="navlink">
+                <a href="/wishlist" class="navlink cart-link">
                     <i class="fa-solid fa-heart"></i>
+                    <p class="wish-count">{{ $wishcount }}</p>
                 </a>
-                <a href="{{ route('cart.index') }}" class="navlink">
+                <a href="{{ route('cart.index') }}" class="navlink cart-link">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <p class="cart-count">{{ $cartcount }}</p>
                 </a>
+
 
                 <form action="{{ route('auth.logout') }}" method="POST" style="display: inline;">
                     @csrf
@@ -80,7 +88,7 @@
         </div>
 
         <div class="icons">
-           @auth
+            @auth
                 <a href="/profile" class="navlink">
                     <i class="fa-solid fa-user"></i>
                 </a>
@@ -89,6 +97,7 @@
                 </a>
                 <a href="{{ route('cart.index') }}" class="navlink">
                     <i class="fa-solid fa-cart-shopping"></i>
+
                 </a>
 
                 <form action="{{ route('auth.logout') }}" method="POST" style="display: inline;">
@@ -112,5 +121,3 @@
 </body>
 
 </html>
-
-

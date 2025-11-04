@@ -11,7 +11,7 @@ body {
     overscroll-behavior-inline: contain;
     padding: 20px;
 
-    background-color: rgb(223, 221, 221);
+    background-color: #d8d6d5;
 
 }
 
@@ -560,4 +560,40 @@ body {
 .mainarea {
     flex: 1;
     padding: 20px;
+}
+
+.cart-link {
+    position: relative;
+
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.cart-link i {
+    font-size: 22px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #f68b1e; /* Amazon orange */
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 50%;
+    padding: 3px 6px;
+    line-height: 1;
+}
+.wish-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #ef5550; /* Amazon orange */
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 50%;
+    padding: 3px 6px;
+    line-height: 1;
 }

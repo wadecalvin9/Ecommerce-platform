@@ -1,21 +1,22 @@
 <x-main>
     <link rel="stylesheet" href="{{ asset('css/cart.css') }}" />
 
-    <div class="cart-page">
-        <h2>WishList</h2>
+    <div class="cart-page single-column">
+        <h2 class="wishlist">Your Wishlist</h2>
 
         @if (session('Success'))
             <p class="success">{{ session('Success') }}</p>
         @endif
 
-
-
         @if ($wishItems->isEmpty())
-            <p style="text-align: center;margin-top:70px; font-size:50px;">No items</p>
+            <div class="empty-cart">
+                <i class="fa-solid fa-heart-crack"></i>
+                <p>Your wishlist is empty.</p>
+                <a href="{{ route('home') }}" class="continue-btn">Continue Shopping</a>
+            </div>
         @else
             <div class="table-container">
                 <table class="table">
-
                     <thead>
                         <tr>
                             <th>Image</th>
@@ -24,45 +25,46 @@
                         </tr>
                     </thead>
                     <tbody>
-
-
-
-                        {{-- Example static rows — replace with @foreach ($cartItems as $item) --}}
                         @foreach ($wishItems as $item)
                             <tr>
-                                <td><img src="{{ $item->product->image_url }}" class="tdimage" alt=""></td>
-                                <td>{{ substr($item->product->name, 0, 20) }}</td>
                                 <td>
-                                    <form action="{{ route('wish.remove', $item->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="delete-btn">Remove</button>
-                                        <a  href="" style="background-color:rgba(240, 248, 255, 0.194); color: black;" class="delete-btn">View</a>
-                                    </form>
-
-
-
-
+                                    <img src="{{ $item->product->image_url }}" class="tdimage" alt="{{ $item->product->name }}">
                                 </td>
 
+                                <td>
+                                    <div class="product-info">
+                                        <p class="product-name">
+                                            {{ \Illuminate\Support\Str::limit($item->product->name, 50) }}
+                                        </p>
+                                        <p class="product-price-single">
+                                            KSh {{ number_format($item->product->price, 2) }}
+                                        </p>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="actions">
+                                        {{-- View Product --}}
+                                        <a href="{{ route('product.show', $item->product->id) }}" class="view-btn">
+                                            <i class="fa-solid fa-eye"></i>&nbsp; View
+                                        </a>
 
 
-
+                                        {{-- Remove from Wishlist --}}
+                                        <form action="{{ route('wish.remove', $item->id) }}" method="POST" onsubmit="return confirm('Remove this item from wishlist?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="delete-btn">
+                                                <i class="fa-solid fa-trash-can"></i>&nbsp; Remove
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
-
-
-
-
+                    </tbody>
+                </table>
+            </div>
         @endif
-
-
-        </tbody>
-        </table>
     </div>
-
-
-
-
-
 </x-main>

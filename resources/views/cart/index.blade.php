@@ -2,83 +2,84 @@
     <link rel="stylesheet" href="{{ asset('css/cart.css') }}" />
 
     <div class="cart-page">
-        <h2>Your Cart</h2>
-
+        <!-- Left side: Cart items -->
         <div class="table-container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Product</th>
-                        {{-- <th>Category</th> --}}
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        {{--  <th>Status</th>  --}}
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{-- Example static rows — replace with @foreach ($cartItems as $item) --}}
-                    @foreach ($cartItems as $item)
+            <h2>Your Shopping Cart</h2>
+
+            @if ($cartItems->isEmpty())
+                <div class="empty-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>Your cart is empty.</p>
+                    <a href="{{ route('home') }}" class="continue-btn">Continue Shopping</a>
+                </div>
+            @else
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td><img src="{{ $item->product->image_url }}" class="tdimage" alt=""></td>
-                            <td>{{ substr($item->product->name, 0, 20) }}</td>
-                            <td>Ksh {{ number_format($item->product->price * $item->quantity)  }}</td>
-                            <td>
-                                <div class="qty-controls">
-                                    <form class="update-form" action="{{ route('cart.update', $item->id) }}"
-                                        method="post">
-                                        @method('PUT')
-                                        @csrf
-                                        <input type="number" class="quantity-input" name="quantity" min="1"
-                                            value="{{ $item->quantity }}">
-                                    </form>
-                                </div>
-                            </td>
-                            <td>
-                                <form action="{{ route('cart.remove', $item->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                <button class="delete-btn">Remove</button>
-                                </form>
-                            </td>
+                            <th>Image</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Actions</th>
                         </tr>
-                    @endforeach
-
-
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($cartItems as $item)
+                            <tr>
+                                <td>
+                                    <img src="{{ $item->product->image_url }}" class="tdimage"
+                                        alt="{{ $item->product->name }}">
+                                </td>
+                                <td>
+                                    <div class="product-info">
+                                        <p class="product-name">{{ $item->product->name }}</p>
+                                        <p class="product-price-single">KSh
+                                            {{ number_format($item->product->price, 2) }}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <strong>KSh {{ number_format($item->product->price * $item->quantity, 2) }}</strong>
+                                </td>
+                                <td>
+                                    <form class="update-form" action="{{ route('cart.update', $item->id) }}"
+                                        method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <select name="quantity" class="qty-dropdown" onchange="this.form.submit()">
+                                            @for ($i = 1; $i <= 10; $i++)
+                                                <option value="{{ $i }}"
+                                                    {{ $item->quantity == $i ? 'selected' : '' }}>
+                                                    Qty: {{ $i }}
+                                                </option>
+                                            @endfor
+                                        </select>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="{{ route('cart.remove', $item->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="delete-btn">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @endif
         </div>
 
+        <!-- Right side: Summary -->
         <div class="cart-summary">
-            <div class="summary-details">
-                @php
-                    $totalAmount = $cartItems->sum(function ($item) {
-                        return $item->quantity * $item->product->price;
-                    });
-                @endphp
+            @php
+                $totalAmount = $cartItems->sum(fn($item) => $item->quantity * $item->product->price);
+            @endphp
 
-                <h3>Total: Ksh {{ number_format($totalAmount ) }} </h3>
+            <div class="summary-details">
+                <h3>Subtotal ({{ $cartItems->count() }} items):</h3>
+                <p class="total-price">KSh {{ number_format($totalAmount, 2) }}</p>
             </div>
             <button class="checkout-btn">Proceed to Checkout</button>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all quantity inputs
-            const qtyInputs = document.querySelectorAll('.quantity-input');
-
-            qtyInputs.forEach(input => {
-                input.addEventListener('change', function() {
-                    const form = this.closest('.update-form');
-                    if (form) {
-                        form.submit();
-                    }
-                });
-            });
-        });
-    </script>
-
-
-
 </x-main>
