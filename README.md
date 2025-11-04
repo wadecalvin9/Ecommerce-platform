@@ -151,5 +151,6 @@ If you’d like to improve the styling or add more payment methods, feel free to
 This project is open-sourced under the MIT License
 .
 🌍 Author
+.
 💼 wadecalvin9
 • ✉️ wadecalvin9@gmail.com
