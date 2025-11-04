@@ -91,7 +91,7 @@ php artisan serve
 
 Access at: http://localhost:8000
 
-💳 Paystack Integration
+## 💳 Paystack Integration
 
 This project uses the Paystack API directly, no external packages.
 
@@ -146,24 +146,28 @@ public/
 
 ```
 
-🧠 Tips
+## 🧠 Tips
+## 💳 Test Card Details
 
-To test payments, use Paystack test cards:
+You can use these **Paystack test cards** to simulate payments while in test mode.
 
-Card: 4084084084084081
+| Card Type | Card Number | Expiry | CVV | PIN | Result |
+|------------|--------------|--------|-----|-----|--------|
+| ✅ Successful payment | 4084 0840 8408 4081 | 12/30 | 408 | 1234 | Success |
+| ❌ Declined payment | 4084 0840 8408 4082 | 12/30 | 408 | 1234 | Declined |
+| ⚠️ OTP Required | 4084 0840 8408 4084 | 12/30 | 408 | 1234 | Requires OTP |
+| 💳 Insufficient funds | 4084 0840 8408 4083 | 12/30 | 408 | 1234 | Failure |
 
-Expiry: Any future date
+> 🧠 **Note:**  
+> These test cards only work in **Paystack test mode** and do not process real transactions.
 
-CVV: 408
 
-You can view all transactions from your Paystack dashboard.
-
-🧑‍💻 Contributing
+## 🧑‍💻 Contributing
 
 Pull requests are welcome!
 If you’d like to improve the styling or add more payment methods, feel free to open an issue.
 
-📜 License
+## 📜 License
 
 This project is open-sourced under the MIT License
 .
