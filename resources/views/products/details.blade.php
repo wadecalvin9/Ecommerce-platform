@@ -58,7 +58,7 @@
                 <div class="delivery-info">
                     <p>Ships from <strong>Maison</strong></p>
                     <p>Sold by <strong>{{ $product->seller ?? 'Maison Lume' }}</strong></p>
-                    <p>{{ $cartcount }}</p>
+
                 </div>
             </div>
         </div>

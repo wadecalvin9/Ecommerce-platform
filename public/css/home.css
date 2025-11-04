@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f3f3f3;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  scroll-behavior: smooth;
+}
+
+/* Titles */
+.tittle {
+  padding: 30px 20px 10px;
+}
+
+.tittle h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #232f3e;
+}
+
+/* Horizontal Scroll Section */
+.scroll-section {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 15px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #f90 transparent;
+}
+
+.scroll-section::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-section::-webkit-scrollbar-thumb {
+  background-color: #f90;
+  border-radius: 10px;
+}
+.scroll-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Grid for Others */
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Product Cards */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 220px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.cardimg {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.cardinfo {
+  padding: 10px 15px;
+  flex-grow: 1;
+}
+
+.productname {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  min-height: 38px;
+}
+
+.rating {
+  color: #f0ad4e;
+  font-size: 0.85rem;
+}
+
+.price {
+  color: #b12704;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Action Buttons (Leveled & Flexible) */
+.actionbtns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px 15px;
+  margin-top: auto;
+  gap: 10px;
+}
+
+.cartbtn,
+.wishcartbtn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.cartbtn {
+  background-color: #f0c14b;
+  color: #111;
+  padding: 6px 12px;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.cartbtn:hover {
+  background-color: #ddb347;
+}
+
+.wishcartbtn {
+  background-color: #fff;
+  color: #d00;
+  padding: 6px 10px;
+}
+
+.wishcartbtn:hover {
+  background-color: #f6f6f6;
+}
+
+/* Search Section */
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+  background: #232f3e;
+  flex-wrap: wrap;
+  margin-top: 30PX;
+}
+
+.search form {
+  display: flex;
+  width: 50%;
+  min-width: 280px;
+}
+
+.searchTerm {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search button {
+  background: #febd69;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .search form {
+    width: 70%;
+  }
+
+  .scroll-section {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .card {
+    width: 200px;
+    min-width: 200px;
+  }
+
+  .cardimg {
+    height: 160px;
+  }
+
+  .cartbtn {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+
+  .tittle h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+  .tittle {
+    padding: 20px 10px 5px;
+  }
+
+  .tittle h2 {
+    font-size: 1.2rem;
+  }
+
+  .scroll-section {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .grid-section {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .card {
+    width: 160px;
+    min-width: 160px;
+    border-radius: 8px;
+  }
+
+  .cardimg {
+    height: 130px;
+    padding: 6px;
+  }
+
+  .cardinfo {
+    padding: 8px;
+  }
+
+  .productname {
+    font-size: 0.8rem;
+    min-height: 32px;
+  }
+
+  .rating {
+    font-size: 0.75rem;
+  }
+
+  .price {
+    font-size: 0.85rem;
+  }
+
+  .actionbtns {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .cartbtn,
+  .wishcartbtn {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
+
+  .search {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .search form {
+    width: 100%;
+  }
+
+  .search button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Extra small screens (tiny phones) */
+@media (max-width: 400px) {
+  .card {
+    width: 140px;
+    min-width: 140px;
+  }
+
+  .cardimg {
+    height: 110px;
+  }
+
+  .productname {
+    font-size: 0.75rem;
+  }
+
+  .cartbtn,
+  .wishcartbtn {
+    font-size: 0.7rem;
+  }
+}
