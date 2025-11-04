@@ -10,11 +10,6 @@ A modern and responsive eCommerce platform built with **Laravel**, featuring pro
 
  ![wishlist](public/screenshots/wishlist.jpg)   ![checkout](public/screenshots/checkout.jpg)   ![payment](public/screenshots/payment.jpg)  
 
-
-
-
-
-
 ## 🚀 Features
 
 - 🏠 Modern responsive homepage with Amazon-style layout  
@@ -80,13 +75,19 @@ PAYSTACK_CALLBACK_URL=http://localhost:8000/paystack/callback
 ```
 4️⃣ Run Migrations and Seed
 
-```bash php artisan migrate --seed ```
+```bash 
+php artisan migrate --seed
+
+```
 
 
 5️⃣ Serve the Application
 
 
-```bash php artisan serve ```
+```bash 
+php artisan serve
+
+ ```
 
 Access at: http://localhost:8000
 
@@ -95,6 +96,7 @@ Access at: http://localhost:8000
 This project uses the Paystack API directly, no external packages.
 
 Example: PaymentController
+
 ```php
  public function initialize(Request $request)
 {
