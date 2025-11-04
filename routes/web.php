@@ -5,6 +5,14 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\CartController;
+
+use App\Http\Controllers\PaymentController;
+
+Route::post('/paystack/initialize', [PaymentController::class, 'initialize'])->name('paystack.initialize');
+Route::get('/paystack/callback', [PaymentController::class, 'callback'])->name('paystack.callback');
+
+
 
 route::get('/products', function () {
     return view('products.add');
@@ -54,5 +62,14 @@ Route::put('/cart/update/{id}', [App\Http\Controllers\CartController::class, 'up
 Route::delete('/cart/remove/{id}', [App\Http\Controllers\CartController::class, 'remove'])->name('cart.remove');
 
 
+Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
+Route::post('/checkout/place', [CartController::class, 'placeOrder'])->name('checkout.place');
+
+
+
 
 Route::put('/profile/update', [AuthController::class, 'update'])->name('user.profile.update');
+
+Route::fallback(function(){
+    return view('404');
+});

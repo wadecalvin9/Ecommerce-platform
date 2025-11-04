@@ -32,7 +32,7 @@
         </div>
 
         <div class="logo">
-            <h1>Maison Lume</h1>
+            <h1>Maison de Lune</h1>
         </div>
 
         <div class="icons">

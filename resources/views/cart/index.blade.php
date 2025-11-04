@@ -79,7 +79,8 @@
                 <h3>Subtotal ({{ $cartItems->count() }} items):</h3>
                 <p class="total-price">KSh {{ number_format($totalAmount, 2) }}</p>
             </div>
-            <button class="checkout-btn">Proceed to Checkout</button>
+            <a style="text-decoration: none; padding: 10px;" href="/checkout" class="checkout-btn">Proceed to Checkout</a>
+
         </div>
     </div>
 </x-main>

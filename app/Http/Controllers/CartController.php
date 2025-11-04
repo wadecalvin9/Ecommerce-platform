@@ -51,4 +51,12 @@ class CartController extends Controller
 
         return redirect()->back()->with('success', 'Item removed from cart.');
     }
+
+
+
+    public function checkout() {
+    $cartItems = Cart::where('user_id', auth()->id())->get();
+    return view('cart.checkout', compact('cartItems'));
+}
+
 }
