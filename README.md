@@ -79,9 +79,13 @@ PAYSTACK_PAYMENT_URL=https://api.paystack.co
 PAYSTACK_CALLBACK_URL=http://localhost:8000/paystack/callback
 ```
 4️⃣ Run Migrations and Seed
+
 ```bash php artisan migrate --seed ```
 
+
 5️⃣ Serve the Application
+
+
 ```bash php artisan serve ```
 
 Access at: http://localhost:8000
