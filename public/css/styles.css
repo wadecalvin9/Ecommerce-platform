@@ -9,7 +9,9 @@ body {
     overflow: auto;
     scroll-behavior: smooth;
     overscroll-behavior-inline: contain;
-    padding: 10px;
+    padding: 20px;
+
+    background-color: rgb(223, 221, 221);
 
 }
 
@@ -17,6 +19,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -171,11 +174,11 @@ body {
 
 .newarrivalcards {
     display: grid;
-    gap: 18px;
+    gap: 10px;
     grid-auto-flow: column;
     grid-auto-columns: 18%;
     background: #f3f3f3;
-
+    border-radius: 10px;
     padding: 25px 40px 40px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
@@ -184,6 +187,7 @@ body {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     scrollbar-color: #f68b1e #f3f3f3;
+    box-shadow: 0px 1px 1px rgb(119, 118, 118);
 }
 
 .newarrivalcards::-webkit-scrollbar {
@@ -501,7 +505,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 100px;
   justify-content: center;
 
 }
@@ -526,4 +530,34 @@ body {
   background-color: #d97515;
 }
 
+.layout {
+    display: flex;
+    align-items: flex-start;
+}
 
+.sideFilter {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-top: 60px;
+    position: sticky;
+    top: 0;
+    padding: 25px;
+    min-height: 100vh;
+    background-color: #e0e0e0;
+    border-right: 1px solid #ccc;
+}
+
+.sideFilter div {
+    margin-top: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+.sideFilter label{
+    padding-top: 30px;
+}
+
+.mainarea {
+    flex: 1;
+    padding: 20px;
+}

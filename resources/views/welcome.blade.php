@@ -1,6 +1,4 @@
 <x-main>
-    <x-hero />
-
     <!-- 🔍 Search Section -->
     <div class="search">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -11,10 +9,6 @@
         </form>
     </div>
 
-    <!-- 🆕 New Arrivals -->
-    <div class="tittle" style="padding-top:40px">
-        <h2>New Arrivals</h2>
-    </div>
 
     @if (session('info'))
         <p class="info">{{ session('info') }}</p>
@@ -24,6 +18,12 @@
         <p class="success">{{ session('success') }}</p>
     @endif
 
+
+
+    <!-- 🆕 New Arrivals -->
+    <div class="tittle" style="padding-top:40px">
+        <h2>New Arrivals</h2>
+    </div>
     <div class="newarrivalcards">
 
         @foreach ($products as $product)
@@ -32,7 +32,7 @@
                     <img class="cardimg" src="{{ $product->image_url }}" alt="{{ $product->name }}">
 
                     <div class="cardinfo">
-                        <div class="productname">{{ $product->name }}</div>
+                        <div class="productname">{{ substr($product->name, 0, 60) }}</div>
                         <div class="rating">★★★★☆ <span>(230)</span></div>
                         <div class="price">Ksh {{ number_format($product->price, 2) }}</div>
 
@@ -81,7 +81,7 @@
                     <img class="cardimg" src="{{ $product->image_url }}" alt="{{ $product->name }}">
 
                     <div class="cardinfo">
-                        <div class="productname">{{ $product->name }}</div>
+                        <div class="productname">{{ substr($product->name, 0, 60) }}</div>
                         <div class="rating">★★★★☆ <span>(230)</span></div>
                         <div class="price">Ksh {{ number_format($product->price, 2) }}</div>
 
@@ -122,7 +122,7 @@
                     <img class="cardimg" src="{{ $product->image_url }}" alt="{{ $product->name }}">
 
                     <div class="cardinfo">
-                        <div class="productname">{{ $product->name }}</div>
+                        <div class="productname">{{ substr($product->name, 0, 60) }}</div>
                         <div class="rating">★★★★☆ <span>(230)</span></div>
                         <div class="price">Ksh {{ number_format($product->price, 2) }}</div>
 
@@ -158,4 +158,10 @@
 
     </div>
     <script></script>
+
+
+
+
+
+
 </x-main>
