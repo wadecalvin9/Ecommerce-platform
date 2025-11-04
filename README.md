@@ -4,6 +4,15 @@ A modern and responsive eCommerce platform built with **Laravel**, featuring pro
 
 ---
 
+## Screenshots
+
+![home](public/screenshots/home.png) 
+
+
+
+
+
+
 ## 🚀 Features
 
 - 🏠 Modern responsive homepage with Amazon-style layout  
@@ -152,8 +161,8 @@ This project is open-sourced under the MIT License
 .
 
 
-🌍 Author
+## 🌍 Author
 
-.
 💼 wadecalvin9
-• ✉️ wadecalvin9@gmail.com
+
+✉️ wadecalvin9@gmail.com
