@@ -6,7 +6,7 @@ A modern and responsive eCommerce platform built with **Laravel**, featuring pro
 
 ## Screenshots
 
-![home](public/screenshots/home.png) 
+![home](public/screenshots/home.jpg) 
 
 
 
