@@ -32,7 +32,7 @@ A modern and responsive eCommerce platform built with **Laravel**, featuring pro
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/ecommerce-platform.git
+git clone https://github.com/wadecalvin9/Ecommerce-platform.git
 cd ecommerce-platform
 
 ```
