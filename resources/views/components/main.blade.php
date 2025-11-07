@@ -22,7 +22,7 @@
 </style>
 
 <body>
-    <!-- NAV -->
+    <!-- NAV BAR-->
     <div class="nav">
         <div class="navlinks">
             <a href="/" class="navlink">Home</a>
