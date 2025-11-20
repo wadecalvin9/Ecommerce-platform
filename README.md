@@ -1,4 +1,4 @@
-# 🛍️ Laravel E-Commerce Platform
+# 🛍️ Laravel E-Commerce Platform 
 
 A modern and responsive eCommerce platform built with **Laravel**, featuring product listings, cart, wishlist, checkout flow, and **Paystack payment integration**
 
