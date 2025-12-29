@@ -91,7 +91,7 @@ php artisan serve
 
 Access at: http://localhost:8000
 
-## 💳 Paystack Integration
+## 💳 Paystack Integrations
 
 This project uses the Paystack API directly, no external packages.
 
